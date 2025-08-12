@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #020617;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #020617;
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .animate-gradient {
+    background-size: 200% auto;
+    animation: gradient 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+
+  .animate-float-slow {
+    animation: float 8s ease-in-out infinite 1s;
+  }
+
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 24s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes slideUp {
+    0%, 16.66% {
+      transform: translateY(0);
+    }
+    20%, 33.33% {
+      transform: translateY(-24px);
+    }
+    36.66%, 50% {
+      transform: translateY(-48px);
+    }
+    53.33%, 66.66% {
+      transform: translateY(-72px);
+    }
+    70%, 83.33% {
+      transform: translateY(-96px);
+    }
+    86.66%, 100% {
+      transform: translateY(-120px);
+    }
+  }
+
+  @keyframes slideRight {
+    from {
+      transform: translateX(-16.666%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-slide-right {
+    animation: slideRight 600s linear infinite;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #0ea5e9, #8b5cf6);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #0284c7, #7c3aed);
+  }
+
+  /* Selection styles */
+  ::selection {
+    background: rgba(14, 165, 233, 0.3);
+    color: #ffffff;
+  }
+
+  ::-moz-selection {
+    background: rgba(14, 165, 233, 0.3);
+    color: #ffffff;
+  }
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for interactive elements */
+button,
+a,
+input,
+textarea,
+select {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom smooth scroll padding for anchor links */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Ensure proper spacing from fixed header */
+  section:first-of-type {
+    padding-top: 80px;
+  }
+  
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better text readability on mobile */
+  p, li, span {
+    line-height: 1.6;
+  }
+  
+  /* Prevent text from being too small */
+  * {
+    -webkit-text-size-adjust: 100%;
+  }
+}
