@@ -1,4 +1,3 @@
-import React from 'react';
 import { Github, Linkedin, Twitter, Globe, Mail, ArrowUp } from 'lucide-react';
 
 const Footer = () => {

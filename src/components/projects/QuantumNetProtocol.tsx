@@ -1,7 +1,6 @@
-import React from 'react';
 import { ArrowLeft, Cpu, Globe, Shield, Zap } from 'lucide-react';
-import Header from '../Header';
-import Footer from '../Footer';
+import Header from 'src/components/Header';
+import Footer from 'src/components/Footer';
 
 const QuantumNetProtocol = () => {
   return (
