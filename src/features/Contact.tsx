@@ -9,11 +9,24 @@ const Contact = () => {
     project: '',
     message: ''
   });
-
-  const handleSubmit = (e: React.FormEvent) => {
+  
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    console.log('Sending...');
+
+    const res = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/sendEmail`,{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      console.log('Sent!');
+    } else {
+      console.log('Error sending email');
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

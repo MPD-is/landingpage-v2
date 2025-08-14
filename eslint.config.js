@@ -23,6 +23,21 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      'import/no-restricted-paths': [
+        'error',
+        {
+          zones: [
+            {
+              target: './src/features',
+              from: './src/app'
+            },
+            {
+              target: ['./src/components'],
+              from: ['./src/features', './src/app', './src/pages']
+            }
+          ]
+        }
+      ]
     },
   }
 );
