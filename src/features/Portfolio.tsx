@@ -1,54 +1,34 @@
+import { useEffect, useState } from "react";
 import { ExternalLink, Award, TrendingUp, Users } from 'lucide-react';
+import { supabase } from 'src/lib/supabase'
 
 const Portfolio = () => {
-  const projects = [
-    {
-      title: 'QuantumNet Protocol',
-      slug: 'quantum-net-protocol',
-      category: 'Quantum Computing',
-      description: 'Revolutionary quantum communication protocol achieving 99.9% fidelity across global networks.',
-      impact: '10x faster quantum communication',
-      status: 'Deployed Globally',
-      image: 'https://images.pexels.com/photos/8919549/pexels-photo-8919549.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Quantum', 'Networking', 'Security']
-    },
-    {
-      title: 'BioSynth Engine',
-      slug: 'biosynth-engine',
-      category: 'Biotechnology',
-      description: 'AI-powered synthetic biology platform for rapid drug discovery and development.',
-      impact: '75% reduction in discovery time',
-      status: 'Clinical Trials',
-      image: 'https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['AI', 'Biotechnology', 'Drug Discovery']
-    },
-    {
-      title: 'FusionCore Reactor',
-      slug: 'fusion-core-reactor',
-      category: 'Energy Systems',
-      description: 'Next-generation compact fusion reactor with unprecedented energy efficiency.',
-      impact: '500MW clean energy output',
-      status: 'Prototype Testing',
-      image: 'https://images.pexels.com/photos/1476321/pexels-photo-1476321.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Fusion', 'Clean Energy', 'Innovation']
-    },
-    {
-      title: 'NanoHeal Materials',
-      slug: 'nanoheal-materials',
-      category: 'Materials Science',
-      description: 'Self-healing nanomaterials for aerospace and medical applications.',
-      impact: '90% maintenance reduction',
-      status: 'Production Ready',
-      image: 'https://images.pexels.com/photos/8439093/pexels-photo-8439093.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Nanotechnology', 'Materials', 'Aerospace']
-    }
-  ];
+  const [caseStudies, setCaseStudies] = useState([]);
+  const [stats, setStats] = useState([]);
 
-  const stats = [
-    { icon: Award, value: '10+', label: 'Patents Pending' },
-    { icon: TrendingUp, value: '$18.5M', label: 'Market Impact' },
-    { icon: Users, value: '220K+', label: 'Lives Improved' }
-  ];
+  useEffect(() => {
+    const getCaseStudies = async () => {
+      const { data, error } = await supabase
+        .from("casestudies")
+        .select("*")
+        .limit(6);
+      if (error) console.error(error);
+      else setCaseStudies(data);
+    };
+    const getStats = async () => {
+      const { data, error } = await supabase
+        .from("casestudystats")
+        .select("*")
+        .limit(3);
+      if (error) console.error(error);
+      else setStats(data);
+    };
+
+    getStats();
+    getCaseStudies();
+  }, []);
+
+  const statIcons = [Award, TrendingUp, Users];
 
   return (
     <section id="portfolio" className="py-24 bg-slate-950">
@@ -65,7 +45,7 @@ const Portfolio = () => {
         {/* Stats */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {stats.map((stat, index) => {
-            const Icon = stat.icon;
+            const Icon = statIcons[index];
             return (
               <div key={index} className="text-center bg-slate-800/30 rounded-2xl p-6 border border-slate-700">
                 <Icon className="w-8 h-8 text-sky-400 mx-auto mb-4" />
@@ -78,7 +58,7 @@ const Portfolio = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {caseStudies.map((project, index) => (
             <div
               key={index}
               className="group bg-slate-800/30 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-700 hover:border-sky-400/50 transition-all duration-500 hover:scale-105"
@@ -105,7 +85,7 @@ const Portfolio = () => {
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
+                  {project.tags.split("|").map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
                       className="px-2 py-1 bg-slate-700/50 text-slate-300 text-xs rounded-full"
