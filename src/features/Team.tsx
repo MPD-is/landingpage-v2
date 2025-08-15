@@ -1,39 +1,39 @@
+import { useEffect, useState } from "react";
 import { Linkedin, Twitter, Mail, Award } from 'lucide-react';
+import { supabase } from 'src/lib/supabase'
 
 const Team = () => {
-  const leaders = [
-    {
-      name: 'Dr. Sarah Chen',
-      role: 'Chief Innovation Officer',
-      expertise: 'Quantum Computing & AI',
-      image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400',
-      achievements: ['MIT PhD', 'Nature Publications', 'Quantum Pioneer Award'],
-      bio: 'Leading quantum computing research with 15+ years in advanced algorithm development.'
-    },
-    {
-      name: 'Prof. Marcus Rodriguez',
-      role: 'Director of Biotechnology',
-      expertise: 'Synthetic Biology & CRISPR',
-      image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400',
-      achievements: ['Harvard PhD', '200+ Patents', 'Biotech Innovator Award'],
-      bio: 'Pioneering synthetic biology applications with breakthrough gene editing techniques.'
-    },
-    {
-      name: 'Dr. Elena Vasquez',
-      role: 'Energy Systems Lead',
-      expertise: 'Fusion Technology & Materials',
-      image: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=400',
-      achievements: ['Caltech PhD', 'Fusion Breakthrough', 'Energy Innovation Prize'],
-      bio: 'Developing next-generation fusion reactors and revolutionary energy storage systems.'
-    }
-  ];
+  const [advisors, setAdvisors] = useState([]);
+  const [leaders, setLeaders] = useState([]);
+  const [teamStats, setTeamStats] = useState([]);
 
-  const teamStats = [
-    { label: 'Work in Progress PhD', value: '1' },
-    { label: 'Research Papers', value: '500+' },
-    { label: 'Global Patents Pending', value: '10+' },
-    { label: 'Years Combined Experience', value: '100+' }
-  ];
+  useEffect(() => {
+    const getAdvisors = async () => {
+      const { data, error } = await supabase
+        .from("advisors")
+        .select("*");
+      if (error) console.error(error);
+      else setAdvisors(data);
+    };
+    const getLeaders = async () => {
+      const { data, error } = await supabase
+        .from("leaders")
+        .select("*");
+      if (error) console.error(error);
+      else setLeaders(data);
+    };
+    const getTeamStats = async () => {
+      const { data, error } = await supabase
+        .from("teamstats")
+        .select("*");
+      if (error) console.error(error);
+      else setTeamStats(data);
+    };
+
+    getAdvisors();
+    getLeaders();
+    getTeamStats();
+  }, [])
 
   return (
     <section id="team" className="py-24 bg-slate-900/50">
@@ -89,7 +89,7 @@ const Team = () => {
                     <span className="text-sky-400 font-semibold text-sm">Key Achievements</span>
                   </div>
                   <div className="space-y-1">
-                    {leader.achievements.map((achievement, achIndex) => (
+                    {leader.achievements.split("|").map((achievement, achIndex) => (
                       <div key={achIndex} className="text-slate-300 text-xs flex items-center">
                         <div className="w-1.5 h-1.5 bg-sky-400 rounded-full mr-2 flex-shrink-0"></div>
                         {achievement}
@@ -111,6 +111,16 @@ const Team = () => {
                   </button>
                 </div>
               </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Advisory Board */}
+        <div className="grid md:grid-cols-5 gap-8 mb-16">
+          {advisors.map((leader, index) => (
+            <div key={index} className="text-center bg-slate-800/30 rounded-2xl p-6 border border-slate-700">
+              <div className="text-3xl font-bold text-sky-400 mb-2">{}</div>
+              <div className="text-slate-400">{}</div>
             </div>
           ))}
         </div>
