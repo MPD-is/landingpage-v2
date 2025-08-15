@@ -1,186 +1,34 @@
-import React from 'react';
+import { useEffect, useState } from "react";
 import { ArrowLeft, ExternalLink, Award, TrendingUp, Users, Calendar, Clock, Target } from 'lucide-react';
+import { supabase } from 'src/lib/supabase'
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 
 const CaseStudies = () => {
-  const caseStudies = [
-    {
-      id: 1,
-      title: 'QuantumNet Protocol',
-      category: 'Quantum Computing',
-      description: 'Revolutionary quantum communication protocol achieving 99.9% fidelity across global networks.',
-      fullDescription: 'Developed a groundbreaking quantum communication protocol that enables secure, instantaneous data transmission across global networks with unprecedented fidelity rates. This breakthrough addresses the fundamental challenges of quantum decoherence and signal degradation over long distances.',
-      impact: '10x faster quantum communication',
-      status: 'Deployed Globally',
-      duration: '18 months',
-      team: '12 specialists',
-      client: 'Global Tech Consortium',
-      image: 'https://images.pexels.com/photos/8919549/pexels-photo-8919549.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Quantum', 'Networking', 'Security', 'Global Infrastructure'],
-      results: [
-        '99.9% communication fidelity achieved',
-        '10x improvement in transmission speed',
-        'Zero security breaches in 12 months',
-        'Deployed across 50+ global nodes'
-      ],
-      technologies: ['Quantum Entanglement', 'Error Correction', 'Photonic Networks', 'Cryptographic Protocols']
-    },
-    {
-      id: 2,
-      title: 'BioSynth Engine',
-      category: 'Biotechnology',
-      description: 'AI-powered synthetic biology platform for rapid drug discovery and development.',
-      fullDescription: 'Created an advanced AI-driven platform that accelerates drug discovery through synthetic biology, reducing development timelines from years to months while maintaining safety and efficacy standards.',
-      impact: '75% reduction in discovery time',
-      status: 'Clinical Trials',
-      duration: '24 months',
-      team: '18 specialists',
-      client: 'Pharmaceutical Alliance',
-      image: 'https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['AI', 'Biotechnology', 'Drug Discovery', 'Machine Learning'],
-      results: [
-        '75% faster drug discovery process',
-        '90% accuracy in compound prediction',
-        '15 compounds in clinical trials',
-        '$500M in development cost savings'
-      ],
-      technologies: ['Machine Learning', 'Protein Folding', 'Molecular Simulation', 'Biomarker Analysis']
-    },
-    {
-      id: 3,
-      title: 'FusionCore Reactor',
-      category: 'Energy Systems',
-      description: 'Next-generation compact fusion reactor with unprecedented energy efficiency.',
-      fullDescription: 'Engineered a revolutionary compact fusion reactor design that achieves sustained fusion reactions in a significantly smaller footprint, making clean fusion energy commercially viable for the first time.',
-      impact: '500MW clean energy output',
-      status: 'Prototype Testing',
-      duration: '36 months',
-      team: '25 specialists',
-      client: 'Energy Innovation Consortium',
-      image: 'https://images.pexels.com/photos/1476321/pexels-photo-1476321.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Fusion', 'Clean Energy', 'Innovation', 'Sustainability'],
-      results: [
-        '500MW sustained energy output',
-        '95% energy conversion efficiency',
-        'Zero carbon emissions',
-        '80% smaller reactor footprint'
-      ],
-      technologies: ['Magnetic Confinement', 'Plasma Physics', 'Superconducting Magnets', 'Advanced Materials']
-    },
-    {
-      id: 4,
-      title: 'NanoHeal Materials',
-      category: 'Materials Science',
-      description: 'Self-healing nanomaterials for aerospace and medical applications.',
-      fullDescription: 'Developed breakthrough self-healing nanomaterials that can autonomously repair damage, extending lifespan and reducing maintenance requirements across critical applications.',
-      impact: '90% maintenance reduction',
-      status: 'Production Ready',
-      duration: '20 months',
-      team: '14 specialists',
-      client: 'Aerospace Defense Corp',
-      image: 'https://images.pexels.com/photos/8439093/pexels-photo-8439093.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Nanotechnology', 'Materials', 'Aerospace', 'Self-Healing'],
-      results: [
-        '90% reduction in maintenance needs',
-        '300% increase in material lifespan',
-        'Certified for aerospace applications',
-        'Patent portfolio of 25+ innovations'
-      ],
-      technologies: ['Nanoengineering', 'Smart Polymers', 'Molecular Assembly', 'Surface Chemistry']
-    },
-    {
-      id: 5,
-      title: 'CarbonCapture Matrix',
-      category: 'Climate Solutions',
-      description: 'Advanced atmospheric carbon capture and conversion system.',
-      fullDescription: 'Engineered a revolutionary atmospheric carbon capture system that not only removes CO2 from the air but converts it into valuable industrial materials, creating a profitable carbon-negative process.',
-      impact: '1M tons CO2 captured annually',
-      status: 'Pilot Deployment',
-      duration: '30 months',
-      team: '20 specialists',
-      client: 'Climate Action Alliance',
-      image: 'https://images.pexels.com/photos/9324336/pexels-photo-9324336.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Climate', 'Carbon Capture', 'Sustainability', 'Environmental'],
-      results: [
-        '1M tons CO2 captured per year',
-        '95% conversion efficiency',
-        'Revenue-positive operations',
-        'Scalable to global deployment'
-      ],
-      technologies: ['Direct Air Capture', 'Catalytic Conversion', 'Process Optimization', 'Industrial Integration']
-    },
-    {
-      id: 6,
-      title: 'NeuroLink Interface',
-      category: 'Neurotechnology',
-      description: 'Non-invasive brain-computer interface for medical rehabilitation.',
-      fullDescription: 'Created a breakthrough non-invasive brain-computer interface that enables direct neural control of external devices, revolutionizing rehabilitation for patients with mobility impairments.',
-      impact: '85% mobility restoration',
-      status: 'FDA Review',
-      duration: '28 months',
-      team: '16 specialists',
-      client: 'Medical Research Institute',
-      image: 'https://images.pexels.com/photos/8439093/pexels-photo-8439093.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Neurotechnology', 'Medical', 'Rehabilitation', 'Brain-Computer Interface'],
-      results: [
-        '85% mobility function restoration',
-        '99.7% signal accuracy',
-        'Non-invasive implementation',
-        '500+ successful patient trials'
-      ],
-      technologies: ['Neural Signal Processing', 'Machine Learning', 'Biocompatible Materials', 'Real-time Computing']
-    },
-    {
-      id: 7,
-      title: 'HyperSpeed Logistics',
-      category: 'Transportation',
-      description: 'Autonomous hyperloop transportation system for cargo delivery.',
-      fullDescription: 'Developed a fully autonomous hyperloop system optimized for high-speed cargo transport, reducing delivery times and transportation costs while maintaining zero emissions.',
-      impact: '10x faster cargo delivery',
-      status: 'Commercial Testing',
-      duration: '42 months',
-      team: '30 specialists',
-      client: 'Global Logistics Network',
-      image: 'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Transportation', 'Automation', 'Logistics', 'Hyperloop'],
-      results: [
-        '10x faster delivery speeds',
-        '70% cost reduction',
-        'Zero emissions transport',
-        '99.9% delivery accuracy'
-      ],
-      technologies: ['Magnetic Levitation', 'Vacuum Systems', 'Autonomous Control', 'Route Optimization']
-    },
-    {
-      id: 8,
-      title: 'AquaPure System',
-      category: 'Water Technology',
-      description: 'Advanced water purification using quantum filtration technology.',
-      fullDescription: 'Engineered a quantum-enhanced water purification system that removes all contaminants while preserving beneficial minerals, providing clean water access in any environment.',
-      impact: '99.99% purification efficiency',
-      status: 'Global Deployment',
-      duration: '22 months',
-      team: '12 specialists',
-      client: 'Water Access Foundation',
-      image: 'https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tags: ['Water Technology', 'Quantum Filtration', 'Environmental', 'Global Health'],
-      results: [
-        '99.99% contaminant removal',
-        '50M people served',
-        '90% energy efficiency',
-        'Deployed in 30+ countries'
-      ],
-      technologies: ['Quantum Filtration', 'Membrane Technology', 'IoT Monitoring', 'Solar Integration']
-    }
-  ];
+  const [caseStudies, setCaseStudies] = useState([]);
+  const [stats, setStats] = useState([]);
 
-  const stats = [
-    { icon: Award, value: '10+', label: 'Patents Pending' },
-    { icon: TrendingUp, value: '$2.5B', label: 'Market Impact' },
-    { icon: Users, value: '50M+', label: 'Lives Improved' },
-    { icon: Target, value: '98%', label: 'Success Rate' }
-  ];
+  useEffect(() => {
+    const getCaseStudies = async () => {
+      const { data, error } = await supabase
+        .from("casestudies")
+        .select("*");
+      if (error) console.error(error);
+      else setCaseStudies(data);
+    };
+    const getStats = async () => {
+      const { data, error } = await supabase
+        .from("casestudystats")
+        .select("*");
+      if (error) console.error(error);
+      else setStats(data);
+    };
+
+    getStats();
+    getCaseStudies();
+  }, [])
+
+  const statIcons = [Award, TrendingUp, Users, Target];
 
   return (
     <>
@@ -207,7 +55,7 @@ const CaseStudies = () => {
           {/* Stats */}
           <div className="grid md:grid-cols-4 gap-8 mb-16">
             {stats.map((stat, index) => {
-              const Icon = stat.icon;
+              const Icon = statIcons[index];
               return (
                 <div key={index} className="text-center bg-slate-800/30 rounded-2xl p-6 border border-slate-700">
                   <Icon className="w-8 h-8 text-sky-400 mx-auto mb-4" />
@@ -282,7 +130,7 @@ const CaseStudies = () => {
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-1 mb-4">
-                    {study.tags.slice(0, 3).map((tag, tagIndex) => (
+                    {study.tags.split("|").slice(0, 3).map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
                         className="px-2 py-1 bg-slate-700/50 text-slate-300 text-xs rounded-full"
@@ -290,7 +138,7 @@ const CaseStudies = () => {
                         {tag}
                       </span>
                     ))}
-                    {study.tags.length > 3 && (
+                    {study.tags.split("|").length > 3 && (
                       <span className="px-2 py-1 bg-slate-700/50 text-slate-400 text-xs rounded-full">
                         +{study.tags.length - 3}
                       </span>
@@ -305,23 +153,6 @@ const CaseStudies = () => {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* CMS Integration Note */}
-          <div className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-600">
-              <h3 className="text-2xl font-bold mb-4 text-white">Content Management Ready</h3>
-              <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
-                This case studies section is designed to integrate seamlessly with your future CMS system. 
-                Each case study can be dynamically loaded with detailed content, images, and metrics.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-400">
-                <span>• Dynamic Content Loading</span>
-                <span>• SEO Optimized</span>
-                <span>• Media Management</span>
-                <span>• Analytics Integration</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>

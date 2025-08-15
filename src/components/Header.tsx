@@ -14,12 +14,12 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: 'About', href: '#about' },
-    { label: 'Process', href: '#process' },
-    { label: 'Services', href: '#services' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Team', href: '#team' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'About', href: '/#about' },
+    { label: 'Process', href: '/#process' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Portfolio', href: '/#portfolio' },
+    { label: 'Team', href: '/#team' },
+    { label: 'Contact', href: '/#contact' },
   ];
 
   return (
