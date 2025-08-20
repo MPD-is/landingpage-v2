@@ -1,8 +1,37 @@
+import { useState } from 'react';
 import { Github, Linkedin, Twitter, Globe, Mail, ArrowUp } from 'lucide-react';
+import { supabase } from 'src/lib/supabase'
+import toast from 'react-hot-toast';
 
 const Footer = () => {
+  const [formData, setFormData] = useState('');
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(e.target.value);
+  };
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Adding...');
+    const getEmailList = async () => {
+      const { data, error } = await supabase
+        .from("emaillist")
+        .insert({ email: formData });
+      if (error) {
+        console.error(error);
+        if (error.code == "23505") {
+          toast("Email already on list!");
+        } else toast("Error adding email. Check console for details.")
+      }
+      else {
+        console.log("Added!");
+        toast("Email added successfully!");
+      }
+    };
+    getEmailList();
   };
 
   const footerLinks = {
@@ -105,17 +134,20 @@ const Footer = () => {
               <h4 className="text-xl font-bold text-white mb-2">Stay at the Forefront</h4>
               <p className="text-slate-300">Get exclusive insights into breakthrough innovations and emerging technologies.</p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
               <input
                 type="email"
+                name="email"
                 placeholder="your@email.com"
+                onChange={handleInputChange}
+                required
                 className="flex-1 sm:w-80 px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 transition-colors duration-200"
               />
-              <button className="bg-gradient-to-r from-sky-500 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 flex items-center justify-center gap-2 w-full sm:w-auto flex-shrink-0">
+              <button type="submit" className="bg-gradient-to-r from-sky-500 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 flex items-center justify-center gap-2 w-full sm:w-auto flex-shrink-0">
                 <Mail className="w-4 h-4" />
                 Subscribe
               </button>
-            </div>
+            </form>
           </div>
         </div>
 
