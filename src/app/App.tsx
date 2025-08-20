@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 //Shared
 import Header from 'src/components/Header';
@@ -67,6 +68,7 @@ function App() {
               <Portfolio />
               <Team />
               <Contact />
+              <Toaster position="bottom-left" />
               <Footer />
             </>
           } />

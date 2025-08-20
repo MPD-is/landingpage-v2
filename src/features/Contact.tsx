@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Send } from 'lucide-react';
+import toast from 'react-hot-toast';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,21 +15,28 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Sending...');
-
-    const res = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/sendEmail`,{
+    fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/sendEmail`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`
       },
       body: JSON.stringify(formData),
-    });
-
-    if (res.ok) {
-      console.log('Sent!');
-    } else {
-      console.log('Error sending email');
-    }
+    })
+      .then(res => {
+        if (res.ok) {
+          console.log('Sent!');
+          toast("Email sent!");
+        } else {
+          res.json().then(text => {
+            console.log(text);
+            toast("Email could not be sent. Check console for details.");
+          });
+        }
+      })
+      .catch(err => {
+        console.log("Fetch error", err);
+      });
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
