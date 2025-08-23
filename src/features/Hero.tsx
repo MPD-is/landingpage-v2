@@ -32,7 +32,7 @@ const Hero = () => {
 
         {/* Subheading */}
         <p className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed px-4">
-          We're a revolutionary R&D and product development firm that transforms breakthrough ideas into tomorrow's reality through cutting-edge innovation pipelines.
+          We're a revolutionary research, design, and product development firm that transforms breakthrough ideas into tomorrow's reality.
         </p>
 
         {/* CTA Buttons */}
@@ -60,12 +60,12 @@ const Hero = () => {
             <div className="text-slate-400 text-sm sm:text-base">Innovations Delivered</div>
           </div>
           <div className="space-y-2">
-            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-purple-400">98%</div>
-            <div className="text-slate-400 text-sm sm:text-base">Success Rate</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-purple-400">10+</div>
+            <div className="text-slate-400 text-sm sm:text-base">Whiteboards</div>
           </div>
           <div className="space-y-2">
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-400">24/7</div>
-            <div className="text-slate-400 text-sm sm:text-base">Innovation Labs</div>
+            <div className="text-slate-400 text-sm sm:text-base">Operations</div>
           </div>
         </div>
       </div>

@@ -1,105 +1,96 @@
 const TrustedBy = () => {
   const trustedCompanies = [
     {
-      name: 'MIT',
+      name: 'Stevens Institute of Technology',
       logo: 'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Research Institution'
+      category: 'Institution'
     },
     {
-      name: 'Stanford',
+      name: 'Dooson',
       logo: 'https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'University'
+      category: 'Industry'
     },
     {
-      name: 'NASA',
+      name: 'Kaswin',
       logo: 'https://images.pexels.com/photos/586063/pexels-photo-586063.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Space Agency'
+      category: 'Industry'
     },
     {
-      name: 'CERN',
+      name: 'DN Solutions',
       logo: 'https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Research Lab'
+      category: 'Industry'
     },
     {
-      name: 'Google',
+      name: 'KIMM',
       logo: 'https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Technology'
+      category: 'Institution'
     },
     {
-      name: 'Microsoft',
+      name: 'AJOU University',
       logo: 'https://images.pexels.com/photos/4348401/pexels-photo-4348401.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Technology'
+      category: 'Institution'
     },
     {
-      name: 'Harvard',
+      name: 'Molloy University',
       logo: 'https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'University'
+      category: 'Institution'
     },
     {
-      name: 'Caltech',
+      name: 'Bira',
       logo: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Research Institution'
+      category: 'Startup'
     },
     {
-      name: 'IBM',
+      name: 'MIPSLab',
       logo: 'https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Technology'
+      category: 'Startup'
     },
     {
-      name: 'Apple',
+      name: 'EStop',
       logo: 'https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Technology'
+      category: 'Startup'
     },
     {
-      name: 'Tesla',
+      name: 'Andromeda Hosting',
       logo: 'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Innovation'
+      category: 'Infrastructure'
     },
     {
-      name: 'SpaceX',
+      name: 'Build The Earth',
       logo: 'https://images.pexels.com/photos/586030/pexels-photo-586030.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Aerospace'
+      category: 'Community'
     },
     {
-      name: 'Oxford',
+      name: 'Tech United',
       logo: 'https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'University'
+      category: 'Community'
     },
     {
-      name: 'Cambridge',
-      logo: 'https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'University'
+      name: 'The Good Old Motorcycle Parts Company',
+      logo: 'https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
+      category: 'Manufacturing'
     },
     {
-      name: 'Amazon',
-      logo: 'https://images.pexels.com/photos/4348401/pexels-photo-4348401.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Technology'
+      name: 'New England Air Conditioning',
+      logo: 'https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
+      category: 'Small Business'
     },
     {
-      name: 'Meta',
-      logo: 'https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Technology'
+      name: 'Kearfott',
+      logo: 'https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
+      category: 'Manufacturing'
     },
     {
-      name: 'NVIDIA',
-      logo: 'https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Technology'
+      name: 'Tir 1 Education',
+      logo: 'https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
+      category: 'Startup'
     },
     {
-      name: 'Intel',
-      logo: 'https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Technology'
+      name: 'No Decks Just Dough',
+      logo: 'https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
+      category: 'Community'
     },
-    {
-      name: 'Boeing',
-      logo: 'https://images.pexels.com/photos/586030/pexels-photo-586030.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Aerospace'
-    },
-    {
-      name: 'Lockheed Martin',
-      logo: 'https://images.pexels.com/photos/586063/pexels-photo-586063.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
-      category: 'Defense'
-    }
+    
   ];
 
   return (
@@ -210,16 +201,16 @@ const TrustedBy = () => {
         <div className="mt-12 pt-8 border-t border-slate-800">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-center">
             <div>
-              <div className="text-xl sm:text-2xl font-bold text-sky-400 mb-1">50+</div>
+              <div className="text-xl sm:text-2xl font-bold text-sky-400 mb-1">10+</div>
               <div className="text-slate-400 text-xs sm:text-sm">Global Partners</div>
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-bold text-purple-400 mb-1">25+</div>
+              <div className="text-xl sm:text-2xl font-bold text-purple-400 mb-1">5+</div>
               <div className="text-slate-400 text-xs sm:text-sm">Countries</div>
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-bold text-orange-400 mb-1">100%</div>
-              <div className="text-slate-400 text-xs sm:text-sm">Confidentiality</div>
+              <div className="text-slate-400 text-xs sm:text-sm">Quality</div>
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-bold text-green-400 mb-1">24/7</div>

@@ -32,7 +32,7 @@ const About = () => {
             The Future of <span className="text-transparent bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text">R&D</span>
           </h2>
           <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed px-4">
-            We're not just another development firm. We're architects of tomorrow, engineering the impossible and turning visionary concepts into market-ready realities through revolutionary innovation pipelines.
+              We are commited to bringing your ideas to life, no matter how big or small, how complex or simple, we will work with you to make it a reality.
           </p>
         </div>
 

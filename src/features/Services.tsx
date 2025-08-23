@@ -5,29 +5,29 @@ const Services = () => {
     {
       icon: Cpu,
       title: 'Advanced Computing',
-      description: 'Quantum computing, AI/ML systems, and next-generation processors',
-      features: ['Quantum Algorithms', 'Neural Networks', 'Edge Computing', 'Distributed Systems'],
+      description: 'From edge devices to cloud infrastructure, we build advanced systems that deliver reliable performance today and scale seamlessly for tomorrow.',
+      features: ['Full-stack infrastructure', 'Neural Networks', 'Cloud Computing', 'Edge Computing'],
       color: 'from-sky-400 to-cyan-500'
     },
     {
       icon: Dna,
-      title: 'Biotechnology',
-      description: 'Gene editing, synthetic biology, and personalized medicine solutions',
-      features: ['CRISPR Applications', 'Biomarker Discovery', 'Drug Development', 'Precision Medicine'],
+      title: 'Robotics',
+      description: 'From design to development, we build intelligent robotic systems that sense, move, and adapt.',
+      features: ['Precision Engineering', 'Collaborative Robotics', 'Advanced Sensing', 'Artificial Intelligence'],
       color: 'from-green-400 to-emerald-500'
     },
     {
       icon: Zap,
-      title: 'Energy Systems',
-      description: 'Revolutionary energy storage, fusion technology, and sustainable power',
-      features: ['Fusion Research', 'Battery Technology', 'Smart Grids', 'Renewable Integration'],
+      title: 'Embedded Systems',
+      description: 'In-house PCB design and manufacturing allows us to build extremely custom products quickly and efficiently.',
+      features: ['Circuit/PCB design', 'Microcontroller Programming', 'Rapid Prototyping', 'Product Integration'],
       color: 'from-yellow-400 to-orange-500'
     },
     {
       icon: Globe,
-      title: 'Climate Solutions',
-      description: 'Carbon capture, environmental restoration, and climate adaptation tech',
-      features: ['Carbon Sequestration', 'Climate Modeling', 'Ecosystem Restoration', 'Adaptation Tech'],
+      title: 'Manufacturing',
+      description: '.',
+      features: ['3D P', 'Ecosystem Restoration', 'Adaptation Tech', 'Sustainability'],
       color: 'from-blue-400 to-teal-500'
     },
     {
@@ -51,10 +51,10 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-6">
-            Revolutionary <span className="text-transparent bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text">Capabilities</span>
+            We do it<span className="text-transparent bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text"> all in-house</span>
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            We operate at the cutting edge of multiple disciplines, delivering breakthrough innovations across critical technology domains
+            Our team's expertise spans across multiple disciplines and skillsets, allowing us to iterate and improve on your ideas quickly and efficiently.
           </p>
         </div>
 
