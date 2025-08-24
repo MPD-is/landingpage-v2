@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Send } from 'lucide-react';
+import { Mail, Phone, Send } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 
@@ -50,7 +50,12 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Get In Touch',
-      details: ['hello@mpd.is', 'partnerships@mpd.is']
+      details: ['partnerships@mpd.is']
+    },
+    {
+      icon: Phone,
+      title: 'Call now',
+      details: ['+1.908.33.MPDIS (67347) - Local NJ', '+1.877.33.MPDIS (67347) - Toll-free']
     }
   ];
 
@@ -215,10 +220,6 @@ const Contact = () => {
                   <span className="text-green-400">● Live</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>Dominican Republic</span>
-                  <span className="text-yellow-400">● Coming Soon</span>
-                </div>
-                <div className="flex items-center justify-between">
                   <span>Florida, USA</span>
                   <span className="text-green-400">● Live</span>
                 </div>
@@ -239,22 +240,14 @@ const Contact = () => {
                   <span className="text-yellow-400">● Coming Soon</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>Madrid, Spain</span>
-                  <span className="text-green-400">● Live</span>
-                </div>
-                <div className="flex items-center justify-between">
                   <span>Pittsburgh, PA</span>
                   <span className="text-yellow-400">● Coming Soon</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>Warsaw, Poland</span>
-                  <span className="text-green-400">● Live</span>
                 </div>
               </div>
             </div>
 
             {/* Quick Stats */}
-            <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-slate-700">
+            <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-6 sm:p-7 border border-slate-700">
               <h4 className="font-semibold text-white mb-4 text-sm sm:text-base">Response Time</h4>
               <div className="space-y-4">
                 <div>
@@ -267,13 +260,6 @@ const Contact = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-slate-300 text-sm sm:text-base">Project Kickoff</span>
-                    <span className="text-purple-400 font-semibold text-sm sm:text-base">{'< 1 week'}</span>
-                  </div>
-                  <div className="w-full bg-slate-700 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-purple-400 to-pink-500 h-2 rounded-full w-10/12"></div>
-                  </div>
                 </div>
               </div>
             </div>

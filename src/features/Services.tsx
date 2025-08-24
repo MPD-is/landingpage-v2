@@ -22,27 +22,6 @@ const Services = () => {
       description: 'In-house PCB design and manufacturing allows us to build extremely custom products quickly and efficiently.',
       features: ['Circuit/PCB design', 'Microcontroller Programming', 'Rapid Prototyping', 'Product Integration'],
       color: 'from-yellow-400 to-orange-500'
-    },
-    {
-      icon: Globe,
-      title: 'Manufacturing',
-      description: '.',
-      features: ['3D P', 'Ecosystem Restoration', 'Adaptation Tech', 'Sustainability'],
-      color: 'from-blue-400 to-teal-500'
-    },
-    {
-      icon: Shield,
-      title: 'Security & Defense',
-      description: 'Cybersecurity innovations, cryptography, and defense technologies',
-      features: ['Quantum Encryption', 'Threat Detection', 'Autonomous Defense', 'Secure Communications'],
-      color: 'from-purple-400 to-indigo-500'
-    },
-    {
-      icon: Microscope,
-      title: 'Materials Science',
-      description: 'Nanomaterials, metamaterials, and revolutionary material properties',
-      features: ['Nanoengineering', 'Smart Materials', 'Metamaterial Design', 'Surface Engineering'],
-      color: 'from-pink-400 to-rose-500'
     }
   ];
 
@@ -100,7 +79,7 @@ const Services = () => {
           <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-600">
             <h3 className="text-2xl font-bold mb-4 text-white">Ready to Push the Boundaries?</h3>
             <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
-              Whether you're tackling quantum computing challenges or developing the next breakthrough in biotechnology, our team has the expertise to turn your vision into reality.
+              Whether you're looking into a new consumer product or starting the next manufacturing revolution, our team has the expertise to turn your vision into reality.
             </p>
             <a 
               href="#contact"

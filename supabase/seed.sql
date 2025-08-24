@@ -1,17 +1,21 @@
 insert into public.leaders
     values
-    (DEFAULT,'Dr. Sarah Chen', 'Chief Innovation Officer', 'Quantum Computing & AI', 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400', 'MIT PhD|Nature Publications|Quantum Pioneer Award', 'Leading quantum computing research with 15+ years in advanced algorithm development.'),
-    (DEFAULT,'Prof. Marcus Rodriguez', 'Director of Biotechnology', 'Synthetic Biology & CRISPR', 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400', 'Harvard PhD|200+ Patents|Biotech Innovator Award', 'Pioneering synthetic biology applications with breakthrough gene editing techniques.'),
-    (DEFAULT,'Dr. Elena Vasquez', 'Energy Systems Lead', 'Fusion Technology & Materials', 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=400', 'Caltech PhD|Fusion Breakthrough|Energy Innovation Prize', 'Developing next-generation fusion reactors and revolutionary energy storage systems.');
+    (DEFAULT,'Anthony J. Mauceri', 'Chief Innovation Officer', 'Quantum Computing & AI', 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400', 'MIT PhD|Nature Publications|Quantum Pioneer Award', 'Leading quantum computing research with 15+ years in advanced algorithm development.'),
+    (DEFAULT,'Sebastian Drytych', 'Director of Biotechnology', 'Synthetic Biology & CRISPR', 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400', 'Harvard PhD|200+ Patents|Biotech Innovator Award', 'Pioneering synthetic biology applications with breakthrough gene editing techniques.'),
+    (DEFAULT,'Ryan Piedrahita', 'Energy Systems Lead', 'Fusion Technology & Materials', 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=400', 'Caltech PhD|Fusion Breakthrough|Energy Innovation Prize', 'Developing next-generation fusion reactors and revolutionary energy storage systems.');
 
 insert into public.teamstats
     values
     (DEFAULT,'Work in Progress PhD','1' ),
-    (DEFAULT,'Research Papers','500+' ),
+    (DEFAULT,'Case Studies','30+' ),
     (DEFAULT,'Global Patents Pending','10+' ),
     (DEFAULT,'Years Combined Experience','100+' );
 
--- insert into public.advisors
+insert into public.advisors
+    values
+    (DEFAULT,'Vin deAugustino', 'Chief Innovation Officer', 'Quantum Computing & AI', 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400', 'MIT PhD|Nature Publications|Quantum Pioneer Award', 'Leading quantum computing research with 15+ years in advanced algorithm development.'),
+    (DEFAULT,'Victor Lawrence', 'Chief Innovation Officer', 'Quantum Computing & AI', 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400', 'MIT PhD|Nature Publications|Quantum Pioneer Award', 'Leading quantum computing research with 15+ years in advanced algorithm development.'),
+    (DEFAULT,'Will McLoid', 'Chief Innovation Officer', 'Quantum Computing & AI', 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400', 'MIT PhD|Nature Publications|Quantum Pioneer Award', 'Leading quantum computing research with 15+ years in advanced algorithm development.'),
 
 insert into public.casestudies
     values
@@ -139,6 +143,6 @@ insert into public.casestudies
 insert into public.casestudystats
     values
     (DEFAULT,'10+','Patents Pending' ),
-    (DEFAULT,'$2.5B','Market Impact' ),
-    (DEFAULT,'50M+','Lives Improved' ),
+    (DEFAULT,'$18M+','Market Impact' ),
+    (DEFAULT,'220k+','Lives Improved' ),
     (DEFAULT,'98%','Success Rate' );

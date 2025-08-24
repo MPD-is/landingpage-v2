@@ -43,7 +43,7 @@ const Team = () => {
             World-Class <span className="text-transparent bg-gradient-to-r from-sky-400 to-purple-500 bg-clip-text">Innovators</span>
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Our team brings together the brightest minds from leading institutions, united by a shared vision of revolutionary innovation
+            Our team brings together diverse views from all over the world.
           </p>
         </div>
 
@@ -139,23 +139,23 @@ const Team = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-sky-400 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🚀</span>
               </div>
-              <h4 className="font-semibold text-white mb-2">Breakthrough Thinking</h4>
-              <p className="text-slate-300 text-sm">Challenging conventions and pushing the boundaries of what's possible</p>
+              <h4 className="font-semibold text-white mb-2">Always Innovating</h4>
+              <p className="text-slate-300 text-sm">Pushing the boundaries of what's possible at every opportunity</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🌍</span>
               </div>
-              <h4 className="font-semibold text-white mb-2">Global Impact</h4>
-              <p className="text-slate-300 text-sm">Every innovation designed to solve humanity's greatest challenges</p>
+              <h4 className="font-semibold text-white mb-2">Community First</h4>
+              <p className="text-slate-300 text-sm">Always looking to gather inspiration and inspire others with events and outreach</p>
             </div>
             
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">⚡</span>
               </div>
-              <h4 className="font-semibold text-white mb-2">Rapid Innovation</h4>
+              <h4 className="font-semibold text-white mb-2">Rapid Development</h4>
               <p className="text-slate-300 text-sm">Accelerating the journey from concept to world-changing reality</p>
             </div>
           </div>

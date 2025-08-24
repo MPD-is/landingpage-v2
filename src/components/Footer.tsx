@@ -35,12 +35,11 @@ const Footer = () => {
   };
 
   const footerLinks = {
-    Innovation: [
-      { name: 'Quantum Computing', href: '/quantum-computing' },
-      { name: 'Biotechnology', href: '/biotechnology' },
-      { name: 'Energy Systems', href: '/energy-systems' },
-      { name: 'Climate Solutions', href: '/climate-solutions' },
-      { name: 'Materials Science', href: '/materials-science' }
+    "Our Family": [
+      { name: 'No Decks Just Dough', href: '/' },
+      { name: 'Greenhorn Innovation Fund', href: '/' },
+      { name: 'Andromeda Hosting', href: '/' },
+      { name: 'Mauceri Ventures', href: '/' },
     ],
     Company: [
       { name: 'About MP&D', href: '/about-mpd' },
@@ -85,8 +84,8 @@ const Footer = () => {
               <span className="text-white">D</span>
               <span className="text-sm text-slate-400 ml-2">.is</span>
             </div>
-            <p className="text-slate-300 mb-6 leading-relaxed">
-              Revolutionizing the innovation pipeline through breakthrough R&D and cutting-edge product development. Transforming impossible ideas into world-changing realities.
+            <p className="text-slate-300 mb-6 mr-9 leading-relaxed">
+              Reinventing research, design, and product development. Transforming Breakthrough ideas into tomorrow's reality.
             </p>
             
             {/* Social Links */}
