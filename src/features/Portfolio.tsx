@@ -17,9 +17,9 @@ const Portfolio = () => {
     };
     const getStats = async () => {
       const { data, error } = await supabase
-        .from("casestudystats")
+        .from("stats")
         .select("*")
-        .limit(3);
+        .in('label',['Patents Pending','Success Rate','Market Impact']);
       if (error) console.error(error);
       else setStats(data);
     };
@@ -85,7 +85,7 @@ const Portfolio = () => {
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.split("|").map((tag, tagIndex) => (
+                  {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
                       className="px-2 py-1 bg-slate-700/50 text-slate-300 text-xs rounded-full"

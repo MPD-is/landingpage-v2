@@ -10,7 +10,7 @@ create table if not exists casestudies (
     team text not null,
     client text not null,
     image text not null,
-    tags text not null,
-    results text not null,
-    technologies text not null
+    tags text[] not null,
+    results text[] not null,
+    technologies text[] not null
 )

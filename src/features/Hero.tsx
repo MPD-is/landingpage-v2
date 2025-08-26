@@ -1,6 +1,22 @@
 import { ArrowRight, Zap, Atom, Rocket } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { supabase } from 'src/lib/supabase'
 
 const Hero = () => {
+  const [stats, setStats] = useState([]);
+
+  useEffect(() => {
+    const getStats = async () => {
+      const { data, error } = await supabase
+        .from("stats")
+        .select("*")
+        .in('label', ['Innovations Delivered', 'Whiteboards', 'Operations']);
+      if (error) console.error(error);
+      else setStats(data);
+    };
+    
+    getStats();
+  }, []);
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Background Elements */}
@@ -55,18 +71,12 @@ const Hero = () => {
 
         {/* Stats */}
         <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center px-4">
-          <div className="space-y-2">
-            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-sky-400">100+</div>
-            <div className="text-slate-400 text-sm sm:text-base">Innovations Delivered</div>
-          </div>
-          <div className="space-y-2">
-            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-purple-400">10+</div>
-            <div className="text-slate-400 text-sm sm:text-base">Whiteboards</div>
-          </div>
-          <div className="space-y-2">
-            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-orange-400">24/7</div>
-            <div className="text-slate-400 text-sm sm:text-base">Operations</div>
-          </div>
+          {stats.map((stat, index) => (
+            <div key={index} className="space-y-2">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-sky-400">{stat.value}</div>
+              <div className="text-slate-400 text-sm sm:text-base">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
 

@@ -1,9 +1,12 @@
-create table if not exists leaders (
+create table if not exists people (
     id bigint primary key generated always as identity,
     name text not null,
     role text not null,
     expertise text not null,
     image text not null,
-    achievements text not null,
-    bio text not null
+    achievements text[] not null,
+    bio text not null,
+    linkedin text,
+    twitter text,
+    email text
 )

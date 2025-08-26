@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Linkedin, Twitter, Mail, Award } from 'lucide-react';
 import { supabase } from 'src/lib/supabase'
+import {Link} from 'react-router-dom'
 
 const Team = () => {
   const [advisors, setAdvisors] = useState([]);
@@ -10,22 +11,25 @@ const Team = () => {
   useEffect(() => {
     const getAdvisors = async () => {
       const { data, error } = await supabase
-        .from("advisors")
-        .select("*");
+        .from("people")
+        .select("*")
+        .eq('role', 'Board Member')
       if (error) console.error(error);
       else setAdvisors(data);
     };
     const getLeaders = async () => {
       const { data, error } = await supabase
-        .from("leaders")
-        .select("*");
+        .from("people")
+        .select("*")
+        .in('name',["Anthony J. Mauceri","Sebastian Dytrych","Ryan Piedrahita"]);
       if (error) console.error(error);
       else setLeaders(data);
     };
     const getTeamStats = async () => {
       const { data, error } = await supabase
-        .from("teamstats")
-        .select("*");
+        .from("stats")
+        .select("*")
+        .in('label',['Work in Progress PhD','Patents Pending','Years Combined Experience','Case Studies']);
       if (error) console.error(error);
       else setTeamStats(data);
     };
@@ -89,7 +93,7 @@ const Team = () => {
                     <span className="text-sky-400 font-semibold text-sm">Key Achievements</span>
                   </div>
                   <div className="space-y-1">
-                    {leader.achievements.split("|").map((achievement, achIndex) => (
+                    {leader.achievements.map((achievement, achIndex) => (
                       <div key={achIndex} className="text-slate-300 text-xs flex items-center">
                         <div className="w-1.5 h-1.5 bg-sky-400 rounded-full mr-2 flex-shrink-0"></div>
                         {achievement}
@@ -97,6 +101,44 @@ const Team = () => {
                     ))}
                   </div>
                 </div>
+
+                {/* Social Links */}
+                <div className="flex items-center gap-3">
+                  <Link to={leader.linkedin} target="_blank" rel="noopener noreferrer">
+                    <button className="w-10 h-10 bg-slate-700/50 hover:bg-sky-500 rounded-full flex items-center justify-center transition-colors duration-200">
+                      <Linkedin className="w-4 h-4" />
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Advisory Board */}
+        <div className="grid md:grid-cols-5 gap-6 mb-16">
+          {advisors.map((leader, index) => (
+            <div
+              key={index}
+              className="group bg-slate-800/30 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-700 hover:border-sky-400/50 transition-all duration-500 hover:scale-105"
+            >
+              {/* Profile Image */}
+              <div className="relative h-40 overflow-hidden">
+                <img
+                  src={leader.image}
+                  alt={leader.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+              </div>
+
+              {/* Profile Content */}
+              <div className="p-4">
+                <h3 className="text-2xl font-bold mb-2 text-white">{leader.name}</h3>
+                <div className="text-sky-400 font-semibold mb-2">{leader.role}</div>
+                <div className="text-slate-400 text-sm mb-4">{leader.expertise}</div>
+                
+                <p className="text-slate-300 text-sm mb-6 leading-relaxed">{leader.bio}</p>
 
                 {/* Social Links */}
                 <div className="flex items-center gap-3">
@@ -111,16 +153,6 @@ const Team = () => {
                   </button>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Advisory Board */}
-        <div className="grid md:grid-cols-5 gap-8 mb-16">
-          {advisors.map((leader, index) => (
-            <div key={index} className="text-center bg-slate-800/30 rounded-2xl p-6 border border-slate-700">
-              <div className="text-3xl font-bold text-sky-400 mb-2">{}</div>
-              <div className="text-slate-400">{}</div>
             </div>
           ))}
         </div>

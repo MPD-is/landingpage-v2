@@ -1,4 +1,4 @@
-import { Cpu, Dna, Zap, Globe, Shield, Microscope } from 'lucide-react';
+import { Cpu, Bot, CircuitBoard , Globe, Shield, Microscope } from 'lucide-react';
 
 const Services = () => {
   const services = [
@@ -10,14 +10,14 @@ const Services = () => {
       color: 'from-sky-400 to-cyan-500'
     },
     {
-      icon: Dna,
+      icon: Bot,
       title: 'Robotics',
       description: 'From design to development, we build intelligent robotic systems that sense, move, and adapt.',
       features: ['Precision Engineering', 'Collaborative Robotics', 'Advanced Sensing', 'Artificial Intelligence'],
       color: 'from-green-400 to-emerald-500'
     },
     {
-      icon: Zap,
+      icon: CircuitBoard ,
       title: 'Embedded Systems',
       description: 'In-house PCB design and manufacturing allows us to build extremely custom products quickly and efficiently.',
       features: ['Circuit/PCB design', 'Microcontroller Programming', 'Rapid Prototyping', 'Product Integration'],
