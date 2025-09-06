@@ -149,7 +149,7 @@ insert into public.people
         'Sebastian Dytrych', 
         'Role', 
         'Specialty', 
-        'https://media.discordapp.net/attachments/1401381257488760876/1409675941256364154/IMG20250825190702.jpg?ex=68ae3e86&is=68aced06&hm=32abbbf401b579555f7449c53c65921c094f02da8d62ef2e7e4fe05628aa6c11&=&format=webp&width=385&height=846', 
+        'https://cdn.discordapp.com/attachments/1401381257488760876/1409675941256364154/IMG20250825190702.jpg?ex=68bd67c6&is=68bc1646&hm=bed16550eb32148957e95f94f0cb3469a1efb1f7c014ad7f9a8220201798510f&', 
         array['Harvard PhD','200+ Patents','Biotech Innovator Award'], 
         'Very special.',
         'https://www.linkedin.com/in/sebastian-dytrych-47801726b/'
