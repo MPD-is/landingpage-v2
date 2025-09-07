@@ -36,10 +36,10 @@ const Footer = () => {
 
   const footerLinks = {
     "Our Family": [
-      { name: 'No Decks Just Dough', href: '/' },
-      { name: 'Greenhorn Innovation Fund', href: '/' },
-      { name: 'Andromeda Hosting', href: '/' },
-      { name: 'Mauceri Ventures', href: '/' },
+      { name: 'No Decks Just Dough', href: 'https://nodecksjustdough.com/' },
+      { name: 'Greenhorn Innovation Fund', href: 'https://greenhorninnovationfund.org/' },
+      { name: 'Andromeda Hosting', href: 'https://www.andromedahosting.com/' },
+      { name: 'Mauceri Ventures', href: 'https://mauceriholdings.com/' },
     ],
     Company: [
       { name: 'About MP&D', href: '/about-mpd' },

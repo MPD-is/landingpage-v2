@@ -220,27 +220,27 @@ const Contact = () => {
                   <span className="text-green-400">● Live</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>Florida, USA</span>
+                  <span>Delray Beach, Florida</span>
                   <span className="text-green-400">● Live</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>Hoboken, NJ</span>
+                  <span>Hoboken, New Jersey</span>
                   <span className="text-green-400">● Live</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>Jersey City, NJ</span>
+                  <span>Jersey City, New Jersey</span>
                   <span className="text-green-400">● Live</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>Long Island, NY</span>
+                  <span>Long Island, New York</span>
                   <span className="text-green-400">● Live</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>Los Angeles, CA</span>
+                  <span>Los Angeles, California</span>
                   <span className="text-yellow-400">● Coming Soon</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>Pittsburgh, PA</span>
+                  <span>Pittsburgh, Pennsylvania</span>
                   <span className="text-yellow-400">● Coming Soon</span>
                 </div>
               </div>
