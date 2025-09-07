@@ -5,7 +5,6 @@ Its not so easy
 ## To get supabase working
 
 - Get the Deno extension in vsc
-- Change the CORS origin to the domain in index.ts
 - Verify the mpd.is / mauceridesigns.com or whatever domain the email will get sent to on resend
 - Make sure you have a project on supabase for this (just make one)
 - do this to deploy the function:
