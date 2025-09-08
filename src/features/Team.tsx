@@ -86,21 +86,6 @@ const Team = () => {
                 
                 <p className="text-slate-300 text-sm mb-6 leading-relaxed">{leader.bio}</p>
 
-                {/* Achievements */}
-                <div className="mb-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Award className="w-4 h-4 text-sky-400" />
-                    <span className="text-sky-400 font-semibold text-sm">Key Achievements</span>
-                  </div>
-                  <div className="space-y-1">
-                    {leader.achievements.map((achievement, achIndex) => (
-                      <div key={achIndex} className="text-slate-300 text-xs flex items-center">
-                        <div className="w-1.5 h-1.5 bg-sky-400 rounded-full mr-2 flex-shrink-0"></div>
-                        {achievement}
-                      </div>
-                    ))}
-                  </div>
-                </div>
 
                 {/* Social Links */}
                 <div className="flex items-center gap-3">
