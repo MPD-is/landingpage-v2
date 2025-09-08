@@ -145,12 +145,6 @@ const Team = () => {
                   <button className="w-10 h-10 bg-slate-700/50 hover:bg-sky-500 rounded-full flex items-center justify-center transition-colors duration-200">
                     <Linkedin className="w-4 h-4" />
                   </button>
-                  <button className="w-10 h-10 bg-slate-700/50 hover:bg-sky-400 rounded-full flex items-center justify-center transition-colors duration-200">
-                    <Twitter className="w-4 h-4" />
-                  </button>
-                  <button className="w-10 h-10 bg-slate-700/50 hover:bg-purple-500 rounded-full flex items-center justify-center transition-colors duration-200">
-                    <Mail className="w-4 h-4" />
-                  </button>
                 </div>
               </div>
             </div>

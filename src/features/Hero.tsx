@@ -61,12 +61,12 @@ const Hero = () => {
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
           </a>
           
-          <a 
+          {/*<a 
             href="#portfolio"
             className="group border-2 border-slate-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-all duration-300 hover:border-sky-400 hover:shadow-lg hover:shadow-sky-400/25 w-full sm:w-auto text-center"
           >
             Explore Our Work
-          </a>
+          </a>*/}
         </div>
 
         {/* Stats */}

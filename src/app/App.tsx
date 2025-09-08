@@ -65,7 +65,7 @@ function App() {
               <About />
               <Process />
               <Services />
-              <Portfolio />
+              {/* <Portfolio />*/}
               <Team />
               <Contact />
               <Toaster position="bottom-left" />

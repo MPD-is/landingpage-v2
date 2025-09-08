@@ -32,7 +32,7 @@ const TrustedBy = () => {
     },
     {
       name: 'Bira',
-      logo: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=200&h=100',
+      logo: 'https://i.imgur.com/s78Z4Ij.png',
       category: 'Startup'
     },
     {
@@ -82,7 +82,7 @@ const TrustedBy = () => {
     },
     {
       name: 'Tir 1 Education',
-      logo: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.oxfordlearning.com%2Fwp-content%2Fuploads%2F2020%2F04%2FGettyImages-1035393946-scaled.jpg&f=1&nofb=1&ipt=cf5bec600e3502ab95232f96cc0f7ea5d5dacf51053568786757a600a88d6401',
+      logo: 'https://i.imgur.com/lR2mS95.png',
       category: 'Startup'
     },
     {
